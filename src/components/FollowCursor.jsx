@@ -125,7 +125,7 @@ const FollowCursor = () => {
     };
   }, []);
 
-  return null; // This component doesn't render anything visible
+  return null;
 };
 
 export default FollowCursor;
