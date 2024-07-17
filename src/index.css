@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+  cursor: default;
+}
+
+html{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+    -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+          overflow: hidden;
+}
+
+a > p{
+  cursor: pointer;
+}
+
+a > svg{
+  cursor: pointer;
+}
+
+:root {
+  --blue-rgb: 237 245 255;
+  --green-rgb: 125 161 35;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+}
+
+body:has(.card[data-color="blue"]:hover) {
+  background-color: rgb(var(--blue-rgb) / 25%);
+}
+
+body:has(.card[data-color="green"]:hover) {
+  background-color: rgb(var(--green-rgb) / 25%);
+}
+
+@layer utilities {
+  .header {
+    @apply flex justify-between items-center sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0;
+  }
+}
+#outerCircleText {
+  color: #f87171;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3000;
+  cursor: default;
+}
+
+#outerCircleText div {
+  position: fixed;
+  cursor: default;
+  pointer-events: none; /* Allows interaction with elements beneath it */
+
+}
+
+#outerCircleText div div {
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 22px;
+  height: 22px;
+  cursor: default;
+  pointer-events: none; /* Prevents interactions with cursor-following text */
+
+}
+
+a{
+  cursor: pointer;
+}
