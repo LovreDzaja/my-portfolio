@@ -71,19 +71,18 @@ const ProjectCards = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-full">
-    <h1 className="text-rose-500 text-lg font-bold mt-4 mb-4 md:mt-0 md:mb-0">
-      /Projects
-    </h1>
+      <h1 className="text-rose-500 text-lg font-bold mt-4 mb-4 md:mt-0 md:mb-0">
+        /Projects
+      </h1>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
-      {/* Map over projects array to render each project card */}
-      {projects.map((project, index) => (
-        <div key={index} className="bg-white rounded-lg shadow-md p-4">
-          <h3 className="text-lg font-bold text-rose-500 mb-2">{project.name}</h3>
-          <p className="text-rose-400 font-bold">{project.description}</p>
-          <a href={project.html_url} target="_blank" rel="noopener noreferrer" className="block mt-2 text-rose-500 hover:underline">View on GitHub</a>
-        </div>
-      ))}
-    </div>
+        {projects.map((project, index) => (
+          <div key={index} className="bg-white rounded-lg shadow-md p-4">
+            <h3 className="text-lg font-bold text-rose-500 mb-2">{project.name}</h3>
+            <p className="text-rose-400 font-bold">{project.description}</p>
+            <a href={project.html_url} target="_blank" rel="noopener noreferrer" className="block mt-2 text-rose-500 hover:underline">View on GitHub</a>
+          </div>
+        ))}
+      </div>
   </div>
   );
 };
