@@ -8,15 +8,17 @@ import FollowCursor from "../components/FollowCursor";
 
 const About = () => {
   return (
-    <div className="w-full h-screen relative">
-      <Canvas className="w-full h-screen bg-transparent" camera={{ near: 0.1, far: 1000 }}>
-        <Suspense fallback={<Loader />}>
-          <Lights />
-          <Heads />
-        </Suspense>
-      </Canvas>
-      <Content />
-    </div>
+    <>
+      <div className="w-full h-screen relative">
+        <Canvas className="w-full h-screen bg-transparent" camera={{ near: 0.1, far: 1000 }}>
+          <Suspense fallback={<Loader />}>
+            <Lights />
+            <Heads />
+          </Suspense>
+        </Canvas>
+        <Content />
+      </div>
+    </>
   );
 };
 

@@ -9,19 +9,21 @@ import "../index.css";
 
 const Projects = () => {
   return (
-    <div className="w-full h-screen relative flex flex-col md:flex-row">
-      <div className="w-full md:w-1/2 h-screen overflow-hidden">
-        <Canvas className="w-full h-full bg-transparent" camera={{ near: 0.1, far: 1000 }}>
-          <Suspense fallback={<Loader />}>
-            <Lights />
-            <Heads />
-          </Suspense>
-        </Canvas>
+    <>
+      <div className="w-full h-screen relative flex flex-col md:flex-row">
+        <div className="w-full md:w-1/2 h-screen overflow-hidden">
+          <Canvas className="w-full h-full bg-transparent" camera={{ near: 0.1, far: 1000 }}>
+            <Suspense fallback={<Loader />}>
+              <Lights />
+              <Heads />
+            </Suspense>
+          </Canvas>
+        </div>
+        <div className="w-full md:w-1/2 h-screen overflow-y-auto flex justify-center items-center">
+          <ProjectCards />
+        </div>
       </div>
-      <div className="w-full md:w-1/2 h-screen overflow-y-auto flex justify-center items-center">
-        <ProjectCards />
-      </div>
-    </div>
+    </>
   );
 };
 
