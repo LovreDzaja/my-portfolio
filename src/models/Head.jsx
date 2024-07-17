@@ -17,9 +17,7 @@ const Head = (props) => {
         const modelHeight = boundingBox.max.y - boundingBox.min.y;
         const modelWidth = boundingBox.max.x - boundingBox.min.x;
 
-        // Calculate a scaleFactor based on the viewport size
-        const scaleFactor = viewport.width < 768 ? 0.6 : 0.9; // Adjust thresholds and values as needed
-
+        const scaleFactor = viewport.width < 768 ? 0.6 : 0.9;
         const targetSize = Math.min(viewport.width, viewport.height) * scaleFactor;
         const scaleToFitWidth = targetSize / modelWidth;
         const scaleToFitHeight = targetSize / modelHeight;

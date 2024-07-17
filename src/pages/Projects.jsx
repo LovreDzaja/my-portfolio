@@ -5,6 +5,8 @@ import { Canvas, useThree } from "@react-three/fiber";
 import Loader from "../components/Loader";
 import Head from "../models/Head";
 import projectsData from "../projects.json";
+import {extend} from "@react-three/fiber";
+extend({Canvas})
 import "../index.css";
 
 const Projects = () => {

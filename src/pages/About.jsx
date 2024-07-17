@@ -5,6 +5,8 @@ import { Canvas, useThree } from "@react-three/fiber";
 import Loader from "../components/Loader";
 import Head from "../models/Head";
 import FollowCursor from "../components/FollowCursor";
+import {extend} from "@react-three/fiber";
+extend({Canvas})
 
 const About = () => {
   return (

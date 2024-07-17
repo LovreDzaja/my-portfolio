@@ -6,6 +6,8 @@ import Head from "../models/Head";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import FollowCursor from "../components/FollowCursor";
+import {extend} from "@react-three/fiber";
+extend({Canvas})
 
 const Home = () => {
   return (
