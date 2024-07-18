@@ -96,23 +96,27 @@ const Content = () => {
   };
 
   return (
-    <div className="absolute inset-0 flex items-center justify-center p-4">
-      <div className="p-8 rounded-lg shadow-lg max-w-2xl text-center">
+    <div className="fixed inset-0 flex items-center justify-center p-4">
+      <div className="p-8 rounded-lg shadow-lg max-w-2xl text-center min-h-72 min-w-72">
         <h1 className="text-rose-500 text-lg font-bold">/Home</h1>
         <FollowCursor />
         <AnimatePresence mode="wait">
           {steps.map(
             (step, index) =>
-              index === currentStep && (
-                <motion.div
-                  key={step.id}
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -50 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  {step.content}
-                </motion.div>
+              index === currentStep && (<>
+                <div className="text-center" style={{ width: '500px' }}>
+                  <motion.div
+                    key={step.id}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -50 }}
+                    transition={{ duration: 0.5 }}
+                    style={{ width: '500px', height: '150px' }}
+                  >
+                    {step.content}
+                  </motion.div>
+                </div>
+                </>
               )
           )}
         </AnimatePresence>
