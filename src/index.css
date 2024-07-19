@@ -73,9 +73,41 @@ body:has(.card[data-color="green"]:hover) {
   width: 22px;
   height: 22px;
   cursor: default;
-  pointer-events: none; /* Prevents interactions with cursor-following text */
+  pointer-events: none;
 
 }
+
+.fixed-size-div {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .fixed-size-div {
+    height: 400px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .fixed-size-div {
+    height: 500px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  .fixed-size-div {
+    height: 600px;
+    width: 100%;
+  }
+}
+
+
 
 a{
   cursor: pointer;

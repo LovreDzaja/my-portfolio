@@ -6,6 +6,7 @@ import Head from "../models/Head";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import FollowCursor from "../components/FollowCursor";
+import "../index.css";
 import {extend} from "@react-three/fiber";
 extend({Canvas})
 
@@ -96,42 +97,45 @@ const Content = () => {
   };
 
   return (
-    <div className="absolute inset-0 flex items-center justify-center p-4">
-      <div className="p-8 rounded-lg shadow-lg max-w-2xl text-center">
-        <h1 className="text-rose-500 text-lg font-bold">/Home</h1>
-        <FollowCursor />
-        <AnimatePresence mode="wait">
-          {steps.map(
-            (step, index) =>
-              index === currentStep && (
-                <motion.div
-                  key={step.id}
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -50 }}
-                  transition={{ duration: 0.5 }}
-                >
+<div className="absolute inset-0 flex items-center justify-center p-4">
+    <div className="p-8 rounded-lg shadow-lg max-w-2xl text-center w-full">
+      <h1 className="text-rose-500 text-lg font-bold">/Home</h1>
+      <FollowCursor />
+      <AnimatePresence mode="wait">
+        {steps.map(
+          (step, index) =>
+            index === currentStep && (
+              <motion.div
+                key={step.id}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -50 }}
+                transition={{ duration: 0.5 }}
+                className="fixed-size-div w-full h-40 md:h-60 lg:h-80 overflow-auto flex items-center justify-center"
+              >
+                <div className="w-full h-full flex items-center justify-center text-center p-4">
                   {step.content}
-                </motion.div>
-              )
-          )}
-        </AnimatePresence>
-        <button
-          onClick={nextStep}
-          className="mt-6 px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500 transition"
-        >
-          Next
-        </button>
-        <div className="flex justify-center mt-6 space-x-4">
-          <a href="https://hr.linkedin.com/in/lovre-d%C5%BEaja-102062233" className="text-blue-500">
-            <FaLinkedin size={32} />
-          </a>
-          <a href="https://github.com/LovreDzaja" className="text-gray-700">
-            <FaGithub size={32} />
-          </a>
-        </div>
+                </div>
+              </motion.div>
+            )
+        )}
+      </AnimatePresence>
+      <button
+        onClick={nextStep}
+        className="mt-6 px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500 transition"
+      >
+        Next
+      </button>
+      <div className="flex justify-center mt-6 space-x-4">
+        <a href="https://hr.linkedin.com/in/lovre-d%C5%BEaja-102062233" className="text-blue-500">
+          <FaLinkedin size={32} />
+        </a>
+        <a href="https://github.com/LovreDzaja" className="text-gray-700">
+          <FaGithub size={32} />
+        </a>
       </div>
     </div>
+  </div>
   );
 };
 
