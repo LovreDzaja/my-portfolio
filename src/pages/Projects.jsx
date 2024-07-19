@@ -74,7 +74,7 @@ const ProjectCards = () => {
   }, []);
 
   return (
-  <div className="flex flex-col items-center justify-center h-full mt-[600px] md:mt-0">
+  <div className="flex flex-col items-center justify-center h-full mt-[900px] md:mt-0">
       <h1 className="text-rose-500 text-lg font-bold mt-4 mb-4 md:mt-0 md:mb-0">
         /Projects
       </h1>
